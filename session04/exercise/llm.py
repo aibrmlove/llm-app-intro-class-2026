@@ -23,11 +23,9 @@ def make_client():
 def build_context(documents):
     """LLMに渡す資料の文章を作る。各資料の先頭に [資料1] のようなIDを付ける。"""
     context = ''
-    # TODO: 資料を1件ずつ文字列に足していく。下のコメントを外し、raise の行を消す。
-    # for document in documents:
-    #     context += f"[資料{document['id']}] {document['title']} / {document['heading']}\n"
-    #     context += document['body'] + '\n\n'
-    raise ValueError('TODO: llm.py の build_context() で、資料の文字列の組み立てを完成させる')
+    for document in documents:
+        context += f"[資料{document['id']}] {document['title']} / {document['heading']}\n"
+        context += document['body'] + '\n\n'
     return context
 
 

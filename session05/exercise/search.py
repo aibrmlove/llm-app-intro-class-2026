@@ -54,9 +54,9 @@ def search_documents(keywords, documents, top_k):
         score = 0
         # TODO: 資料の単語に含まれる検索語の数を数える。下のコメントを外す。
         # （埋めるまでは score が 0 のままなので、どの資料も見つからない）
-        # for keyword in keywords:
-        #     if keyword in document['words']:
-        #         score += 1
+        for keyword in keywords:
+             if keyword in document['words']:
+                score += 1
 
         if score > 0:
             results.append({
